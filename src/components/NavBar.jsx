@@ -4,8 +4,19 @@ import { Link } from "react-router-dom";
 function NavBar(props) {
     
 
+    const localStyle = {
+        header: {
+            backgroundColor: '#000',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '80px',
+        },
+    }
+
+
     return (
-        <nav style={{backgroundColor: "#000", padding: '10px 0'}}>
+        <nav style={localStyle.header}>
             <div>
                 <Link to='/'>Home</Link>
                 {/* <Link to='/contact'>Contact</Link> */}

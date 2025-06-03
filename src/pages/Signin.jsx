@@ -14,9 +14,10 @@ function Signin() {
 
 
     async function handleSignIn() {
-        // do firebase signin
+        // do firebase signin using email and password.
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            const result = await signInWithEmailAndPassword(auth, email, password);
+            console.log(result.user);
             // alert(`User logged in`); 
             navigate('/');
             
@@ -35,9 +36,8 @@ function Signin() {
             const user = result.user;
 
             console.log(`DisplayName: ${user.displayName}`);
-            // console.log(user)
 
-            navigate('/')
+            navigate('/dashboard')
         } catch(error) {
             console.log(error);
         }
@@ -51,7 +51,6 @@ function Signin() {
     return (
         <section id="signinSection">
             <h1>Sign In</h1>
-            {/* implement the UI for Sign in page */}
 
             <input 
             type="string" 

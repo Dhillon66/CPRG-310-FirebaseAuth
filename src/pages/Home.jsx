@@ -2,22 +2,13 @@
 // import { useState } from "react";
 
 
-function Home(props) {
+function Home({user}) {
 
-    
+    console.log(user);
 
     return (
         <>
-        {
-            props.Loading? <h1>Loading...</h1> :
-                props.User?
-                <h1>Home {props.User?.displayName}</h1>:
-                <h1>Signin to your account</h1>
-        }
-        {
-            props.User? 
-            <img src={props.User.photoURL}  />:null
-        }
+            <h1>Welcome {user?.displayName?.toUpperCase()}</h1>
         </>
     );
 }

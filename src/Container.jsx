@@ -46,9 +46,9 @@ function Container() {
             <NavBar user={user} signoutHandler={handleSignOut} />
             <main>
                 <Routes>
-                    <Route path='/' element={<Home User={user} />} />
+                    <Route path='/' element={<Home user={user} />} />
                     {/* <Route path='/contact' element={<Contact />} /> */}
-                    <Route path='/dashboard' element={<Dashboard />} />
+                    <Route path='/dashboard' element={<Dashboard user={user} />} />
                     <Route path='signin' element={<Signin />} />
                 </Routes>
             </main>
