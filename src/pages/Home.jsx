@@ -1,14 +1,11 @@
 
-// import { useState } from "react";
 
 
 function Home({user}) {
 
-    console.log(user);
-
     return (
         <>
-            <h1>Welcome {user?.displayName?.toUpperCase()}</h1>
+            <h1>Home page</h1>
         </>
     );
 }

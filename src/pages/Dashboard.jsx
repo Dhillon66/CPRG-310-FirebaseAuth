@@ -1,3 +1,5 @@
+import '../../css/dashboard.css'
+
 function Dashboard({user}) {
 
 
@@ -13,9 +15,18 @@ function Dashboard({user}) {
         return (
             <>
                 <h1>Dashboard:</h1>
-                <h1>
-                    Welcome {user.displayName?.toUpperCase()}
-                </h1>
+                <div id="dashboardContainer">
+                    <div id="leftContainer">
+
+                        <img src={user.photoURL} />
+
+                    </div>
+                    <div id="rightContainer">
+                        <h3>Name: <span>{user.displayName? user.displayName.toUpperCase() : "<No Name>"}</span></h3>
+                        <p>Email: <span>{user.email.toUpperCase()}</span></p>
+                    </div>
+                </div>
+            
             </>
             
         );
@@ -24,7 +35,12 @@ function Dashboard({user}) {
     return (
         <>
         {
-            user? 
+            /**
+             * Logic to check if 'user' object is not null, then call dashboardUI() method to display the dashboard.
+             * If 'user' object is null then loginUI() method will be called and a default UI is displayed
+             */
+
+            user?
             dashboardUI() : 
             loginUI()
         }
